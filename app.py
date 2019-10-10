@@ -2,6 +2,7 @@
 import logging
 import os
 from functools import wraps
+from uuid import uuid4
 
 import requests
 from flask import Flask, jsonify, request
@@ -64,6 +65,21 @@ def write_file_stream_to_dev_null(stream):
         logging.error(e.msg, exc_info=True)
 
 
+def write_file_stream_to_current_dir(stream):
+    """Write file stream to dev null."""
+    download_dir = os.path.join(os.path.dirname(__file__),
+                                'downloads')
+    os.makedirs(download_dir, exist_ok=True)
+    file_path = os.path.join(download_dir, str(uuid4()))
+    try:
+        with open(file_path, 'wb') as saved_file:
+            saved_file.writelines(stream)
+            return jsonify({'msg': 'File saved'})
+    except Exception as e:
+        return jsonify({'msg': 'something went wrong while writing file'})
+        logging.error(e.msg, exc_info=True)
+
+
 @app.route('/request-files', methods=['POST'])
 @profile
 def upload_request_files():
@@ -92,7 +108,7 @@ def upload_request_stream():
     which doesn't write any temporary file or to memory, it just directly reads
     from the incoming stream.
     """
-    return write_file_stream_to_dev_null(request.stream)
+    return write_file_stream_to_current_dir(request.stream)
 
 
 @app.route('/stream-pass-to-next', methods=['POST'])
@@ -100,5 +116,18 @@ def upload_request_stream():
 def stream_pass_to_next():
     """Mock passing file between "microservices"."""
     next = request.args.get('next', 'localhost:5001')
-    requests.post(f'http://{next}/request-stream', data=request.stream,
-                 headers={'Content-Type': 'application/octet-stream'})
+
+    class WrappedLimitedStream(object):
+        def __init__(self, limitedstream):
+            self.limitedstream = limitedstream
+
+        def read(self, *args, **kwargs):
+            return self.limitedstream.read(*args, **kwargs)
+
+        def __len__(self):
+            return self.limitedstream.limit
+
+    requests.post(f'http://{next}/request-stream',
+                  data=WrappedLimitedStream(request.stream),
+                  headers={'Content-Type': 'application/octet-stream'})
+    return jsonify({'msg': 'File uploaded'})
