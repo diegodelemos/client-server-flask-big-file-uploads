@@ -8,7 +8,7 @@ Create a/some big file(s):
 
 ```console
 $ dd if=/dev/random of=2GB-file.txt count=2048 bs=1048576
-$ ls -lh big-file.txt
+$ ls -lh 2GB-file.txt
 -rw-r--r--  1 username  staff   2.0G Jul  5 11:49 2GB-file.txt
 ```
 
