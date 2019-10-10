@@ -1,0 +1,188 @@
+######## Time and calls profiling. ########
+         27261843 function calls (27261833 primitive calls) in 457.781 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000  457.776  457.776 ./app.py:78(upload_request_files)
+    14/12    0.000    0.000  456.673   38.056 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:345(__getattr__)
+    23/17    0.000    0.000  456.672   26.863 {built-in method builtins.getattr}
+      5/3    0.000    0.000  456.671  152.224 /usr/local/lib/python3.6/site-packages/werkzeug/utils.py:85(__get__)
+        1    0.000    0.000  456.671  456.671 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:493(files)
+        1    0.000    0.000  456.671  456.671 /usr/local/lib/python3.6/site-packages/flask/wrappers.py:87(_load_form_data)
+        1    0.000    0.000  456.671  456.671 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:297(_load_form_data)
+        1    0.000    0.000  456.670  456.670 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:209(parse)
+        1    0.000    0.000  456.670  456.670 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:129(wrapper)
+        1    0.000    0.000  456.669  456.669 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:239(_parse_multipart)
+        1    0.000    0.000  456.669  456.669 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:578(parse)
+        2    0.000    0.000  456.669  228.335 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:404(__init__)
+        1    0.000    0.000  456.669  456.669 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:582(<genexpr>)
+        2   69.465   34.733  456.669  228.335 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:531(parse_parts)
+  4184002   60.927    0.000  220.638    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:427(parse_lines)
+  4183999   98.013    0.000  166.565    0.000 /usr/local/lib/python3.6/tempfile.py:766(write)
+  2092005   31.437    0.000  159.709    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:687(make_line_iter)
+  2092005   76.407    0.000  128.272    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:733(_iter_basic_lines)
+  4175903   36.773    0.000   36.773    0.000 {method 'write' of '_io.BufferedRandom' objects}
+  4183999   31.625    0.000   31.708    0.000 /usr/local/lib/python3.6/tempfile.py:655(_check)
+  2100124   18.263    0.000   18.263    0.000 {method 'append' of 'list' objects}
+  2112380   15.981    0.000   15.981    0.000 {built-in method builtins.len}
+  2096058   15.709    0.000   15.709    0.000 {method 'join' of 'bytes' objects}
+     4101    0.067    0.000    1.135    0.000 {built-in method builtins.next}
+        1    0.000    0.000    1.104    1.104 ./app.py:61(write_file_stream_to_dev_null)
+        1    1.102    1.102    1.102    1.102 {method 'writelines' of '_io._IOBase' objects}
+     4098    0.069    0.000    1.066    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:666(_make_chunk_iter)
+     4098    0.204    0.000    0.997    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:928(read)
+     4097    0.852    0.000    0.852    0.000 {method 'splitlines' of 'bytes' objects}
+     4098    0.675    0.000    0.675    0.000 {method 'read' of 'uwsgi._Input' objects}
+     8098    0.078    0.000    0.078    0.000 {method 'tell' of '_io.BytesIO' objects}
+     8097    0.071    0.000    0.071    0.000 {method 'write' of '_io.BytesIO' objects}
+     4097    0.045    0.000    0.045    0.000 {built-in method builtins.min}
+        1    0.000    0.000    0.005    0.005 /usr/local/lib/python3.6/tempfile.py:661(rollover)
+        1    0.000    0.000    0.005    0.005 /usr/local/lib/python3.6/tempfile.py:573(TemporaryFile)
+        4    0.004    0.001    0.005    0.001 {built-in method io.open}
+        1    0.000    0.000    0.003    0.003 /usr/local/lib/python3.6/tempfile.py:118(_sanitize_params)
+        1    0.000    0.000    0.003    0.003 /usr/local/lib/python3.6/tempfile.py:291(gettempdir)
+        1    0.000    0.000    0.003    0.003 /usr/local/lib/python3.6/tempfile.py:190(_get_default_tempdir)
+        1    0.000    0.000    0.002    0.002 /usr/local/lib/python3.6/site-packages/flask/json/__init__.py:306(jsonify)
+        2    0.000    0.000    0.002    0.001 /usr/local/lib/python3.6/tempfile.py:157(__next__)
+       18    0.000    0.000    0.002    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:301(_get_current_object)
+        1    0.000    0.000    0.002    0.002 /usr/local/lib/python3.6/tempfile.py:251(_mkstemp_inner)
+        2    0.000    0.000    0.002    0.001 /usr/local/lib/python3.6/tempfile.py:160(<listcomp>)
+       16    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/random.py:255(choice)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:363(_find_terminator)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/flask/json/__init__.py:188(dumps)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/flask/json/__init__.py:111(_dump_arg_defaults)
+       13    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/flask/globals.py:49(_find_app)
+       18    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:163(top)
+       16    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/random.py:223(_randbelow)
+        2    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/http.py:378(parse_options_header)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:395(start_file_streaming)
+        2    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/posixpath.py:376(abspath)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:173(__init__)
+        4    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:327(__bool__)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:291(parse_multipart_headers)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/tempfile.py:163(_candidate_tempdir_list)
+       18    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:70(__getattr__)
+        4    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:961(__getitem__)
+        5    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:988(get)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/tempfile.py:146(rng)
+       54    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:282(make_form_data_parser)
+        3    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/os.py:760(getenv)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1247(__setitem__)
+        5    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/globals.py:35(_lookup_req_object)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/posixpath.py:338(normpath)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/wrappers.py:65(max_content_length)
+        3    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/posixpath.py:75(join)
+        3    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/_collections_abc.py:657(get)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1199(set)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:343(set_data)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:332(_get_stream_for_parsing)
+       26    0.000    0.000    0.000    0.000 {method 'rstrip' of 'bytes' objects}
+        3    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/os.py:664(__getitem__)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/random.py:87(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:244(_get_file_stream)
+       19    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       18    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        6    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:911(_unicodify_header_value)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:53(default_stream_factory)
+        3    0.000    0.000    0.000    0.000 {built-in method posix.open}
+        6    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/http.py:235(unquote_header_value)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:361(stream)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1367(__getitem__)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/random.py:96(seed)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/posixpath.py:64(isabs)
+       19    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
+        3    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/os.py:742(encode)
+       17    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:202(get_input_stream)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:182(get_content_length)
+       16    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        5    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/posixpath.py:41(_get_sep)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/__init__.py:183(dumps)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/tempfile.py:638(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/exceptions.py:109(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:379(get_part_encoding)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.unlink}
+        5    0.000    0.000    0.000    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+       10    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/_compat.py:204(to_native)
+       10    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/encoder.py:182(encode)
+        9    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        9    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:2831(__iter__)
+        2    0.000    0.000    0.000    0.000 {function Random.seed at 0x7ff6323727b8}
+        5    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:953(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/tempfile.py:237(_get_candidate_names)
+        4    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 {built-in method itertools.tee}
+        2    0.000    0.000    0.000    0.000 {method 'seek' of '_io.BufferedRandom' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/tempfile.py:748(seek)
+        3    0.000    0.000    0.000    0.000 {method 'groups' of '_sre.SRE_Match' objects}
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1178(_validate_value)
+        4    0.000    0.000    0.000    0.000 {method 'group' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/utils.py:266(get_content_type)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/exceptions.py:80(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/_bootlocale.py:23(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:292(_set_status_code)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:431(__getitem__)
+        4    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:195(get_parse_func)
+        1    0.000    0.000    0.000    0.000 {method 'getvalue' of '_io.BytesIO' objects}
+        2    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:173(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:273(want_form_data_parsed)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/_compat.py:166(make_literal_wrapper)
+        3    0.000    0.000    0.000    0.000 {method 'end' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:527(headers)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/encoder.py:204(iterencode)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:894(on_exhausted)
+        2    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        3    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:280(_line_parse)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:2708(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/app.py:867(debug)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:690(_assert_not_shallow)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:328(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.close}
+        1    0.000    0.000    0.000    0.000 {built-in method _tracemalloc.start}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:880(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/tempfile.py:687(__iter__)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:583(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/tempfile.py:97(_infer_return_type)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/encoder.py:104(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    0.000    0.000 {method 'write' of '_io.BufferedWriter' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:354(_fix_ie_filename)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/wrappers.py:81(blueprint)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1359(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/codecs.py:185(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:913(exhaust)
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'strip' of 'bytes' objects}
+
+
+########     Memory profiling.     ########
+[ Top 10 ]
+/usr/local/lib/python3.6/cProfile.py:65: size=29.4 KiB, count=248, average=122 B
+/usr/local/lib/python3.6/cProfile.py:55: size=23.0 KiB, count=926, average=25 B
+/usr/local/lib/python3.6/cProfile.py:87: size=21.6 KiB, count=262, average=84 B
+/usr/local/lib/python3.6/pstats.py:218: size=19.2 KiB, count=164, average=120 B
+/usr/local/lib/python3.6/cProfile.py:67: size=18.8 KiB, count=167, average=115 B
+/usr/local/lib/python3.6/tracemalloc.py:65: size=11.7 KiB, count=167, average=72 B
+/usr/local/lib/python3.6/cProfile.py:119: size=8088 B, count=182, average=44 B
+/usr/local/lib/python3.6/site-packages/werkzeug/formparser.py:518: size=5848 B, count=172, average=34 B
+<unknown>:0: size=5038 B, count=47, average=107 B
+./app.py:45: size=4742 B, count=8, average=593 B

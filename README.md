@@ -12,7 +12,9 @@ $ ls -lh big-file.txt
 -rw-r--r--  1 username  staff   2.0G Jul  5 11:49 2GB-file.txt
 ```
 
-## Run locally with Flask
+## Local test
+
+### Run the server locally with Flask
 
 Run the Flask application:
 
@@ -21,7 +23,7 @@ $ FLASK_ENV=development FLASK_APP=app.py flask run
 ...
 ```
 
-## Upload files with different
+### Upload files of different sizes
 
 In a different window upload big files:
 
@@ -47,7 +49,7 @@ multipart-form-data_536871062-bytes.txt
 multipart-form-data_268435606-bytes.txt
 ```
 
-## Using Docker and `uwsgi`
+## Closer to production scenario: using Docker and `uwsgi`
 
 Build the server side application and run it in a different terminal session:
 
@@ -72,27 +74,34 @@ File 2GB-file.txt uploaded using request.files.
 
 ## Conclusions
 
-| File size     | Method           | Time            |
-| :-----------: |:----------------:| :--------------:|
-| 256 MB        | `request.stream` | 5.196 seconds   |
-| 512 MB        | `request.stream` | 10.323 seconds  |
-| 1 GB          | `request.stream` | 21.085 seconds  |
-| 2 GB          | `request.stream` | 41.558 seconds  |
-| 256 MB        | `request.files`  | 20.431 seconds  |
-| 512 MB        | `request.files`  | 41.110 seconds  |
-| 1 GB          | `request.files`  | 84.105 seconds  |
-| 2 GB          | `request.files`  | **crashed**     |
+| File size     | Method           | Deployment     | Time            |
+| :-----------: |:----------------:| :------------: |:--------------:|
+| 256 MB        | `request.stream` | Flask          | 5.196 seconds   |
+| 256 MB        | `request.stream` | uwsgi + Docker | 77.104 seconds  |
+| 512 MB        | `request.stream` | Flask          | 10.323 seconds  |
+| 1 GB          | `request.stream` | Flask          | 21.085 seconds  |
+| 2 GB          | `request.stream` | Flask          | 41.558 seconds  |
+| 256 MB        | `request.files`  | Flask          | 20.431 seconds  |
+| 256 MB        | `request.files`  | uwsgi + Docker | 457.781 seconds |
+| 512 MB        | `request.files`  | Flask          | 41.110 seconds  |
+| 1 GB          | `request.files`  | Flask          | 84.105 seconds  |
+| 2 GB          | `request.files`  | Flask          | **crashed**     |
 
-We can observe that in the case of
+- The `request.files` upload type is taking 4 times the time `request.stream` takes
+
+- We can also observe that in the case of
 [`request.files` for a 1GB file](./benchmark/multipart-form-data_1073741972-bytes.txt) most of the time is spent in
 
-```
-        2    9.804    4.902   78.880   39.440 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/formparser.py:531(parse_parts)
-```
+    ```
+            2    9.804    4.902   78.880   39.440 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/formparser.py:531(parse_parts)
+    ```
 
-This is because `werkzeug` [writes to a tempfile any file bigger that 500KB](https://github.com/pallets/werkzeug/blob/e7ba08f209477cb453f15113f9a4d527a6e81bfe/src/werkzeug/formparser.py#L53-L62).
+    This is because `werkzeug` [writes to a tempfile any file bigger that 500KB](https://github.com/pallets/werkzeug/blob/e7ba08f209477cb453f15113f9a4d527a6e81bfe/src/werkzeug/formparser.py#L53-L62).
 
-## Solution
+- There is clearly something that needs to be improved regarding `uwsgi`
+configuration.
+
+## **Solution**
 
 **On the client side**: Use streaming upload with Requests [as stated in Requests docs](https://requests.kennethreitz.org//en/v1.1.0/user/advanced/#streaming-uploads) with `application/octet-stream` content type:
 
