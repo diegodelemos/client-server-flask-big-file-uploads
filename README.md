@@ -1,4 +1,4 @@
-# Large file upload to Flask from Python client
+# Quick test of large file uploads from Python to Flask app
 
 Problem described in https://github.com/reanahub/reana-client/issues/302.
 
@@ -101,7 +101,7 @@ File 2GB-file.txt uploaded using request.files.
 - There is clearly something that needs to be improved regarding `uwsgi`
 configuration.
 
-## **Solution**
+## **Next**
 
 **On the client side**: Use streaming upload with Requests [as stated in Requests docs](https://requests.kennethreitz.org//en/v1.1.0/user/advanced/#streaming-uploads) with `application/octet-stream` content type:
 
