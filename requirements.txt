@@ -2,3 +2,4 @@ Flask
 uwsgi
 Click
 requests
+ipython

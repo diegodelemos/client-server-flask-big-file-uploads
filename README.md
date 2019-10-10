@@ -49,6 +49,27 @@ multipart-form-data_536871062-bytes.txt
 multipart-form-data_268435606-bytes.txt
 ```
 
+## Passing file between Flask applications
+
+Start two applications (you will need to terminal sessions):
+```console
+$ FLASK_ENV=development FLASK_APP=app flask run -p 5001
+...
+$ FLASK_ENV=development FLASK_APP=app flask run -p 5000
+...
+```
+
+In a another session stream upload a big file:
+```console
+$ ipython
+with open('2GB-file.txt', 'rb') as f:
+    requests.post('http://localhost:5000/stream-pass-to-next',
+                  headers={
+                      'Content-Type': 'application/octet-stream'},
+                  params={'profile': True},
+                  data=f)
+```
+
 ## Closer to production scenario: using Docker and `uwsgi`
 
 Build the server side application and run it in a different terminal session:

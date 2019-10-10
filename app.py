@@ -1,10 +1,10 @@
 """."""
 import logging
 import os
-
 from functools import wraps
-from flask import Flask, jsonify, request
 
+import requests
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 app.secret_key = 'secret-key'
@@ -93,3 +93,12 @@ def upload_request_stream():
     from the incoming stream.
     """
     return write_file_stream_to_dev_null(request.stream)
+
+
+@app.route('/stream-pass-to-next', methods=['POST'])
+@profile
+def stream_pass_to_next():
+    """Mock passing file between "microservices"."""
+    next = request.args.get('next', 'localhost:5001')
+    requests.post(f'http://{next}/request-stream', data=request.stream,
+                 headers={'Content-Type': 'application/octet-stream'})
