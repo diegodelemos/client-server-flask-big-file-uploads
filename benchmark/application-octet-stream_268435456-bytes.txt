@@ -1,0 +1,105 @@
+######## Time and calls profiling. ########
+         4356712 function calls in 5.196 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    5.195    5.195 /Users/rodrigdi/code/reanahub/playground/uwsgi-big-files/app.py:96(upload_request_stream)
+        1    0.000    0.000    5.194    5.194 /Users/rodrigdi/code/reanahub/playground/uwsgi-big-files/app.py:61(write_file_stream_to_dev_null)
+        1    0.776    0.776    5.194    5.194 {method 'writelines' of '_io._IOBase' objects}
+  1048154    0.489    0.000    4.418    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:993(__next__)
+  1048154    1.407    0.000    3.928    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:947(readline)
+  1048153    1.943    0.000    2.317    0.000 {method 'readline' of '_io.BufferedReader' objects}
+    32768    0.032    0.000    0.374    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py:572(readinto)
+    32768    0.232    0.000    0.232    0.000 {method 'recv_into' of '_socket.socket' objects}
+  1048155    0.204    0.000    0.204    0.000 {built-in method builtins.len}
+    32768    0.014    0.000    0.062    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+    32768    0.048    0.000    0.048    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+    32768    0.048    0.000    0.048    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py:611(readable)
+        2    0.001    0.000    0.001    0.000 {built-in method io.open}
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/json/__init__.py:306(jsonify)
+       12    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/local.py:345(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/json/__init__.py:188(dumps)
+       14    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/local.py:301(_get_current_object)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:173(__init__)
+       17    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py:183(dumps)
+        3    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/utils.py:85(__get__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:182(encode)
+       14    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/local.py:163(top)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/json/__init__.py:111(_dump_arg_defaults)
+        5    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/globals.py:35(_lookup_req_object)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:361(stream)
+       14    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/local.py:70(__getattr__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:202(get_input_stream)
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:412(_iterencode)
+        9    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/globals.py:49(_find_app)
+        2    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:1247(__setitem__)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:333(_iterencode_dict)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:343(set_data)
+        2    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:1199(set)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:204(iterencode)
+        2    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:988(get)
+        2    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:1367(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/bin/../lib/python3.6/posixpath.py:75(join)
+        2    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/local.py:327(__bool__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/bin/../lib/python3.6/_bootlocale.py:23(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:182(get_content_length)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/utils.py:266(get_content_type)
+       33    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:259(_make_iterencode)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:894(on_exhausted)
+       14    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:880(__init__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:292(_set_status_code)
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+        6    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:911(_unicodify_header_value)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:527(headers)
+        3    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:104(__init__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:953(__init__)
+        7    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+        2    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:1178(_validate_value)
+        1    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/bin/../lib/python3.6/codecs.py:185(__init__)
+        2    0.000    0.000    0.000    0.000 {built-in method _json.encode_basestring_ascii}
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:690(_assert_not_shallow)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/wrappers.py:81(blueprint)
+        2    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        1    0.000    0.000    0.000    0.000 {built-in method _tracemalloc.start}
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/bin/../lib/python3.6/posixpath.py:41(_get_sep)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/datastructures.py:1359(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py:353(<lambda>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:886(__iter__)
+        1    0.000    0.000    0.000    0.000 /Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/flask/app.py:867(debug)
+
+
+########     Memory profiling.     ########
+[ Top 10 ]
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/cProfile.py:65: size=19.3 KiB, count=165, average=120 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/pstats.py:218: size=9720 B, count=81, average=120 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/cProfile.py:67: size=9512 B, count=84, average=113 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/cProfile.py:55: size=9480 B, count=392, average=24 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/cProfile.py:87: size=8336 B, count=98, average=85 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/cProfile.py:119: size=8008 B, count=143, average=56 B
+/Users/rodrigdi/code/reanahub/playground/uwsgi-big-files/app.py:45: size=4830 B, count=8, average=604 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/pstats.py:435: size=3939 B, count=28, average=141 B
+/Users/rodrigdi/.virtualenvs/big-file-upload-server/lib/python3.6/site-packages/werkzeug/wsgi.py:956: size=3463 B, count=97, average=36 B
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/pstats.py:436: size=2519 B, count=27, average=93 B

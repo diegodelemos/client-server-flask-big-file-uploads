@@ -1,0 +1,92 @@
+######## Time and calls profiling. ########
+         4192841 function calls in 77.104 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   77.095   77.095 ./app.py:96(upload_request_stream)
+        1    0.000    0.000   77.094   77.094 ./app.py:61(write_file_stream_to_dev_null)
+        1   11.598   11.598   77.091   77.091 {method 'writelines' of '_io._IOBase' objects}
+  1048154   17.230    0.000   65.493    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:993(__next__)
+  1048154   28.840    0.000   48.264    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:947(readline)
+  1048153   11.208    0.000   11.208    0.000 {method 'readline' of 'uwsgi._Input' objects}
+  1048155    8.215    0.000    8.215    0.000 {built-in method builtins.len}
+        2    0.008    0.004    0.008    0.004 {built-in method io.open}
+        1    0.000    0.000    0.003    0.003 /usr/local/lib/python3.6/site-packages/flask/json/__init__.py:306(jsonify)
+       12    0.000    0.000    0.002    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:345(__getattr__)
+       14    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:301(_get_current_object)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/flask/json/__init__.py:188(dumps)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:173(__init__)
+        1    0.000    0.000    0.001    0.001 /usr/local/lib/python3.6/site-packages/flask/json/__init__.py:111(_dump_arg_defaults)
+       17    0.000    0.000    0.001    0.000 {built-in method builtins.getattr}
+       14    0.000    0.000    0.001    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:163(top)
+        9    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/globals.py:49(_find_app)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1247(__setitem__)
+        5    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/globals.py:35(_lookup_req_object)
+        3    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/utils.py:85(__get__)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1199(set)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:343(set_data)
+       14    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:70(__getattr__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:361(stream)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:988(get)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/local.py:327(__bool__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/__init__.py:183(dumps)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:202(get_input_stream)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1367(__getitem__)
+        6    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:911(_unicodify_header_value)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       25    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/encoder.py:182(encode)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/posixpath.py:75(join)
+       14    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:182(get_content_length)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/utils.py:266(get_content_type)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/_bootlocale.py:23(getpreferredencoding)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_response.py:292(_set_status_code)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/encoder.py:204(iterencode)
+        7    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:527(headers)
+        2    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1178(_validate_value)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:894(on_exhausted)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/posixpath.py:41(_get_sep)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:953(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        3    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:880(__init__)
+        3    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/codecs.py:185(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _tracemalloc.start}
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/json/encoder.py:104(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/app.py:867(debug)
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/datastructures.py:1359(__init__)
+        1    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/flask/wrappers.py:81(blueprint)
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.000    0.000 {method 'read' of 'uwsgi._Input' objects}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wrappers/base_request.py:690(_assert_not_shallow)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 /usr/local/lib/python3.6/site-packages/werkzeug/wsgi.py:886(__iter__)
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+
+
+########     Memory profiling.     ########
+[ Top 10 ]
+/usr/local/lib/python3.6/cProfile.py:65: size=16.5 KiB, count=142, average=119 B
+/usr/local/lib/python3.6/pstats.py:431: size=10.6 KiB, count=73, average=149 B
+/usr/local/lib/python3.6/cProfile.py:55: size=10.1 KiB, count=366, average=28 B
+/usr/local/lib/python3.6/cProfile.py:67: size=8368 B, count=71, average=118 B
+/usr/local/lib/python3.6/pstats.py:218: size=8160 B, count=68, average=120 B
+/usr/local/lib/python3.6/cProfile.py:87: size=6776 B, count=82, average=83 B
+/usr/local/lib/python3.6/pstats.py:436: size=6537 B, count=72, average=91 B
+/usr/local/lib/python3.6/cProfile.py:119: size=5784 B, count=106, average=55 B
+./app.py:45: size=4742 B, count=8, average=593 B
+/usr/local/lib/python3.6/pstats.py:426: size=3384 B, count=73, average=46 B
