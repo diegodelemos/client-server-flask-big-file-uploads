@@ -70,7 +70,9 @@ def write_file_stream_to_current_dir(stream):
     download_dir = os.path.join(os.path.dirname(__file__),
                                 'downloads')
     os.makedirs(download_dir, exist_ok=True)
-    file_path = os.path.join(download_dir, str(uuid4()))
+    file_size_in_mb = int(stream.limit/1024/1024)
+    filename = f'{file_size_in_mb}MB_{str(uuid4())}'
+    file_path = os.path.join(download_dir, filename)
     try:
         with open(file_path, 'wb') as saved_file:
             saved_file.writelines(stream)
