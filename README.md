@@ -125,9 +125,9 @@ Now, choosing `request.stream`, let's compare differences between:
 | 512MB     | 1    | 10.323 seconds |
 | 512MB     | 2    | 3.237 seconds  |
 | 1GB       | 1    | 21.085 seconds |
-| 1GB       | 2    | 6.785 seconds  |
+| 1GB       | 2    | 9.472 seconds  |
 | 2GB       | 1    | 41.558 seconds |
-| 2GB       | 2    | 13.426 seconds |
+| 2GB       | 2    | 20.078 seconds |
 
 - The `request.files` upload type is taking 4 times the time `request.stream` takes
 
@@ -143,7 +143,7 @@ Now, choosing `request.stream`, let's compare differences between:
 - There is clearly something that needs to be improved regarding `uwsgi`
 configuration.
 
-- Looks like the 2 hops setup is roughly 3x faster. Since this is suspicious, you can check the file integrity (original file versus uploaded file) like follows:
+- Looks like the 2 hops setup is roughly 2x faster. Since this is suspicious, you can check the file integrity (original file versus uploaded file) like follows:
     ```console
     $ bash check-files-integrity.sh
     Removing existing files and downloads ...
