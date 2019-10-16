@@ -3,3 +3,5 @@ uwsgi
 Click
 requests
 ipython
+memory_profiler
+wdb

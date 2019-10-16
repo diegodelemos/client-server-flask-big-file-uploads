@@ -6,6 +6,8 @@ from uuid import uuid4
 
 import requests
 from flask import Flask, jsonify, request
+from werkzeug.datastructures import FileStorage
+from memory_profiler import profile as mem_profile
 
 app = Flask(__name__)
 app.secret_key = 'secret-key'
@@ -65,6 +67,43 @@ def write_file_stream_to_dev_null(stream):
         logging.error(e.msg, exc_info=True)
 
 
+@mem_profile
+def write_file_stream_to_current_dir_with_filestorage(stream):
+    """Write file stream to dev null."""
+    download_dir = os.path.join(os.path.dirname(__file__),
+                                'downloads')
+    os.makedirs(download_dir, exist_ok=True)
+    file_size_in_mb = int(stream.limit/1024/1024)
+    filename = f'{file_size_in_mb}MB_{str(uuid4())}'
+    file_path = os.path.join(download_dir, filename)
+    try:
+        filestorage = FileStorage(stream)
+        filestorage.save(file_path, buffer_size=10485760)
+        return jsonify({'msg': 'File saved'})
+    except Exception as e:
+        return jsonify({'msg': 'something went wrong while writing file'})
+        logging.error(e.msg, exc_info=True)
+
+
+@mem_profile
+def write_file_stream_to_current_dir_with_shutil(stream):
+    """Write file stream to dev null."""
+    download_dir = os.path.join(os.path.dirname(__file__),
+                                'downloads')
+    os.makedirs(download_dir, exist_ok=True)
+    file_size_in_mb = int(stream.limit/1024/1024)
+    filename = f'{file_size_in_mb}MB_{str(uuid4())}'
+    file_path = os.path.join(download_dir, filename)
+    try:
+        import shutil
+        with open(file_path, 'wb') as dest:
+            shutil.copyfileobj(stream, dest, length=10485760)
+        return jsonify({'msg': 'File saved'})
+    except Exception as e:
+        return jsonify({'msg': 'something went wrong while writing file'})
+        logging.error(e.msg, exc_info=True)
+
+@mem_profile
 def write_file_stream_to_current_dir(stream):
     """Write file stream to dev null."""
     download_dir = os.path.join(os.path.dirname(__file__),
@@ -110,7 +149,7 @@ def upload_request_stream():
     which doesn't write any temporary file or to memory, it just directly reads
     from the incoming stream.
     """
-    return write_file_stream_to_current_dir(request.stream)
+    return write_file_stream_to_current_dir_with_shutil(request.stream)
 
 
 @app.route('/stream-pass-to-next', methods=['POST'])

@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  intermediate:
+    command: ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]
+    image: big-file-upload/intermediate:latest
+    deploy:
+      replicas: 1
+    ports:
+      - "5000:5000"
+    links:
+      - wdb
+      - final
+    volumes:
+      - "/Users/rodrigdi/code/reanahub/playground/client-server-flask-big-file-uploads/downloads:/code/downloads"
+    environment:
+      FLASK_APP: app.py
+      WDB_SOCKET_SERVER: wdb
+      WDB_NO_BROWSER_AUTO_OPEN: "True"
+  final:
+    command: ["flask", "run", "-h", "0.0.0.0", "-p", "5001"]
+    image: big-file-upload/final:latest
+    deploy:
+      replicas: 1
+    ports:
+      - "5001:5001"
+    volumes:
+      - "/Users/rodrigdi/code/reanahub/playground/client-server-flask-big-file-uploads/downloads:/code/downloads"
+    links:
+      - wdb
+    environment:
+      FLASK_APP: app.py
+      WDB_SOCKET_SERVER: wdb
+      WDB_NO_BROWSER_AUTO_OPEN: "True"
+  wdb:
+    image: kozea/wdb:3.2.6
+    ports:
+      - "1984:1984"
